@@ -109,138 +109,138 @@ class TuringMachine:
 
             if res[i] == "*" and estado == "q0":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                      "\t     * "+" \t  D  \t\t q0")
+                      "\t     * "+" \t  D  \t\t q1")
                 print("\n")
                 i += 1
 
             elif res[i] == " " and estado == "q0":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                      "\t     * "+" \t  D  \t\t q0")
+                      "\t     * "+" \t  D  \t\t q10")
                 print("\n")
                 estado = "q10"
                 i += 1
 
             elif res[i] == "*" and estado == "q1":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                      "\t     * "+" \t  D  \t\t q0")
+                      "\t     * "+" \t  D  \t\t q1")
                 print("\n")
                 i += 1
 
             elif res[i] == " " and estado == "q1":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                      "\t     * "+" \t  D  \t\t q0")
+                      "\t     * "+" \t  D  \t\t q2")
                 print("\n")
                 estado = "q2"
                 i += 1
 
             elif res[i] == "*" and estado == "q2":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                      "\t     * "+" \t  D  \t\t q0")
+                      "\t     * "+" \t  D  \t\t q2")
                 print("\n")
                 i -= 1
 
             elif res[i] == "*" and estado == "q2":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                      "\t     * "+" \t  D  \t\t q0")
+                      "\t     * "+" \t  D  \t\t q3")
                 print("\n")
                 estado = "q3"
                 i -= 1
 
             elif res[i] == "B" and estado == "q2":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                      "\t     * "+" \t  D  \t\t q0")
+                      "\t     * "+" \t  D  \t\t q2")
                 print("\n")
                 i += 1
 
             elif res[i] == "*" and estado == "q3":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                      "\t     * "+" \t  D  \t\t q0")
+                      "\t     * "+" \t  D  \t\t q4")
                 print("\n")
                 estado = "q4"
                 i += 1
 
             elif res[i] == " " and estado == "q4":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                      "\t     * "+" \t  D  \t\t q0")
+                      "\t     * "+" \t  D  \t\t q5")
                 print("\n")
                 estado = "q5"
                 i += 1
 
             elif res[i] == "B" and estado == "q4":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                      "\t     * "+" \t  D  \t\t q0")
+                      "\t     * "+" \t  D  \t\t q4")
                 print("\n")
                 i += 1
 
             elif res[i] == "*" and estado == "q5":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                      "\t     * "+" \t  D  \t\t q0")
+                      "\t     * "+" \t  D  \t\t q5")
                 print("\n")
                 i += 1
 
             elif res[i] == " " and estado == "q5":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                      "\t     * "+" \t  D  \t\t q0")
+                      "\t     * "+" \t  D  \t\t q6")
                 print("\n")
                 estado = "q6"
                 i -= 1
 
             elif res[i] == '*' and estado == "q6":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                      "\t     * "+" \t  D  \t\t q0")
+                      "\t     * "+" \t  D  \t\t q6")
                 print("\n")
                 i -= 1
 
             elif res[i] == ' ' and estado == "q6":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                    "\t     * "+" \t  D  \t\t q0")
+                    "\t     * "+" \t  D  \t\t q7")
                 print("\n")
                 estado = "q7"
                 i -= 1
 
             elif res[i] == '*' and estado == "q7":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                    "\t     * "+" \t  D  \t\t q0")
+                    "\t     * "+" \t  D  \t\t q4")
                 print("\n")
                 estado = "q4"
                 i += 1
 
             elif res[i] == ' ' and estado == "q7":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                    "\t     * "+" \t  D  \t\t q0")
+                    "\t     * "+" \t  D  \t\t q8")
                 print("\n")
                 estado = "q8"
                 i += 1
 
             elif res[i] == 'B' and estado == "q7":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                    "\t     * "+" \t  D  \t\t q0")
+                    "\t     * "+" \t  D  \t\t q9")
                 print("\n")
                 estado = "q9"
                 i -= 1
 
             elif res[i] == ' ' and estado == "q8":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                    "\t     * "+" \t  D  \t\t q0")
+                    "\t     * "+" \t  D  \t\t q9")
                 print("\n")
                 estado = "q9"
                 i -= 1
 
             elif res[i] == 'B' and estado == "q8":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                    "\t     * "+" \t  D  \t\t q0")
+                    "\t     * "+" \t  D  \t\t q8")
                 print("\n")
                 i += 1
 
             elif res[i] == '*' and estado == "q9":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                    "\t     * "+" \t  D  \t\t q0")
+                    "\t     * "+" \t  D  \t\t q9")
                 print("\n")
                 i -= 1
 
             elif res[i] == ' ' and estado == "q9":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                    "\t     * "+" \t  D  \t\t q0")
+                    "\t     * "+" \t  D  \t\t q9")
                 print("\n")
                 i += 1
 
@@ -253,32 +253,32 @@ class TuringMachine:
 
             elif res[i] == '*' and estado == "q10":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                    "\t     * "+" \t  D  \t\t q0")
+                    "\t     * "+" \t  D  \t\t q10")
                 print("\n")
                 i += 1
 
             elif res[i] == ' ' and estado == "q10":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                    "\t     * "+" \t  D  \t\t q0")
+                    "\t     * "+" \t  D  \t\t q11")
                 print("\n")
                 estado = "q11"
                 i -= 1
 
             elif res[i] == '*' and estado == "q11":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                    "\t     * "+" \t  D  \t\t q0")
+                    "\t     * "+" \t  D  \t\t q11")
                 print("\n")
                 i -= 1
 
             elif res[i] == ' ' and estado == "q11":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                    "\t     * "+" \t  D  \t\t q0")
+                    "\t     * "+" \t  D  \t\t q11")
                 print("\n")
                 i -= 1
 
             elif res[i] == 'A' and estado == "q11":
                 print("\tq0\t  "+res[i]+"\t "+str(i) +
-                    "\t     * "+" \t  D  \t\t q0")
+                    "\t     * "+" \t  D  \t\t q11")
                 print("\n")
                 i -= 1
 
@@ -331,47 +331,47 @@ class TuringMachine:
                 i += 1
             
             elif res[i] == " " and estado == "q0":
-                print("\tq0\t  "+res[i]+"\t "+str(i)+"\t     * "+" \t  D  \t\t q0")
+                print("\tq0\t  "+res[i]+"\t "+str(i)+"\t     * "+" \t  D  \t\t q1")
                 print("\n")
                 estado = "q1"
                 i += 1
 
             elif res[i] == "*" and estado == "q1":
-                print("\tq0\t  "+res[i]+"\t "+str(i)+"\t     * "+" \t  D  \t\t q0")
+                print("\tq0\t  "+res[i]+"\t "+str(i)+"\t     * "+" \t  D  \t\t q1")
                 print("\n")
                 i += 1
 
             elif res[i] == " " and estado == "q1":
-                print("\tq0\t  "+res[i]+"\t "+str(i)+"\t     * "+" \t  D  \t\t q0")
+                print("\tq0\t  "+res[i]+"\t "+str(i)+"\t     * "+" \t  D  \t\t q2")
                 print("\n")
                 res[i] = " "
                 estado = "q2"
                 i -= 1
             
             elif res[i] == "*" and estado == "q2":
-                print("\tq0\t  "+res[i]+"\t "+str(i)+"\t     * "+" \t  D  \t\t q0")
+                print("\tq0\t  "+res[i]+"\t "+str(i)+"\t     * "+" \t  D  \t\t q3")
                 print("\n")
                 res[i] = " "
                 estado = "q3"
                 i -= 1
             
             elif res[i] == "*" and estado == "q2":
-                print("\tq0\t  "+res[i]+"\t "+str(i)+"\t     * "+" \t  D  \t\t q0")
+                print("\tq0\t  "+res[i]+"\t "+str(i)+"\t     * "+" \t  D  \t\t q2")
                 print("\n")
                 break
 
             elif res[i] == "*" and estado == "q3":
-                print("\tq0\t  "+res[i]+"\t "+str(i)+"\t     * "+" \t  D  \t\t q0")
+                print("\tq0\t  "+res[i]+"\t "+str(i)+"\t     * "+" \t  D  \t\t q3")
                 print("\n")
                 i -= 1
 
             elif res[i] == " " and estado == "q3":
-                print("\tq0\t  "+res[i]+"\t "+str(i)+"\t     * "+" \t  D  \t\t q0")
+                print("\tq0\t  "+res[i]+"\t "+str(i)+"\t     * "+" \t  D  \t\t q3")
                 print("\n")
                 i -= 1
 
             elif i < 0:
-                print("\tq0\t  "+res[i]+"\t "+str(i)+"\t     * "+" \t  D  \t\t q0")
+                print("\tq0\t  "+res[i]+"\t "+str(i)+"\t     * "+" \t  D  \t\t q4")
                 print("\n")
                 estado = "q4"
                 i += 1
@@ -384,7 +384,7 @@ class TuringMachine:
                 i += 1
 
             elif res[i] == " " and estado == "q4":
-                print("\tq0\t  "+res[i]+"\t "+str(i)+"\t     * "+" \t  D  \t\t q0")
+                print("\tq0\t  "+res[i]+"\t "+str(i)+"\t     * "+" \t  D  \t\t q4")
                 print("\n")
                 res[i] = " "
                 estado = "q4"
@@ -398,7 +398,7 @@ class TuringMachine:
 
 
 
-a = TuringMachine()
+#a = TuringMachine()
 # a.soma()
 #a.subtracao()
-a.multiplicacao()
+#a.multiplicacao()
