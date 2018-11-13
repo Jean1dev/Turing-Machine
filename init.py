@@ -1,1 +1,4 @@
-print("\n\t\t\t\t==============================\n")
+from menu import Menu
+
+start = Menu()
+start.start()
