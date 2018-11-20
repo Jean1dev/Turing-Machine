@@ -11,6 +11,31 @@ class TuringMachine:
         return input("\n\t\t\t\t\t    Digite o Numero :   ")
 
     # ***********************************************************************
+    def igualar(self):
+    # ***********************************************************************
+        numero1 = self.getInputData()
+        numero2 = self.getInputData()
+
+        operador1 = ""
+        operador2 = ""
+
+        i = 0
+        for i in range(int(numero1)):
+            operador1 += operador1 + "*"
+
+        i = 0
+        for i in range(int(numero2)):
+            operador2 += operador2 + "*"
+
+        res = operador1 + " " + operador2 + ""
+        print("Valores: " + res)
+
+        res = operador1 + " " + operador1 + ""
+        print("Valores igualados: " + res)
+		
+
+
+    # ***********************************************************************
     def soma(self):
     # ***********************************************************************
         numero1 = self.getInputData()
@@ -73,10 +98,10 @@ class TuringMachine:
                       "\t       "+" \t  FIM  \t\t q2")
                 break
 
-            print("\n")
-            print("\n")
-            result = ''.join(res)
-            print("Resultado: " + result)
+        print("\n")
+        print("\n")
+        result = ''.join(res)
+        print("Resultado: " + result)
 
     # **********************************************************************
     def multiplicacao(self):

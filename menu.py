@@ -1,6 +1,9 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 from Turing import TuringMachine
+import platform
+import os
+
 
 class Menu:
     __turingInstance = ''
@@ -9,17 +12,28 @@ class Menu:
     def __init__(self):
         self.__turingInstance = TuringMachine()
 
+    def clear(self):
+        system = platform.system()
+        if(system == "Windows"):
+            os.system('cls')
+        else:
+            os.system('clear')
 
     def input(self):
         return input(" - Digite a op :   ")
 
     def start(self):
-        print("\n\t\t\t\t==============================\n")
-        print("\t\t\t\t==1 - Soma  \t           ==\n")
-        print("\t\t\t\t==2 - Subtração  \t      ==\n")
-        print("\t\t\t\t==3 - Multiplicação      ==\n")
-        print("\t\t\t\t==0 - Sair   \t          ==\n")
-        print("\n\t\t\t\t==============================\n")
+        print("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|")
+        print("|      Maquina de Turing      |")
+        print("|-----------------------------|")
+        print("|      1 - Soma               |")
+        print("|      2 - Subtração          |")
+        print("|      3 - Multiplicação      |")
+        print("|      4 - Divisão            |")
+        print("|      0 - Sair               |")
+        print("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|")
+
+        self.clear()
         self.value_chose = self.input()
         self.switch()
 
@@ -29,10 +43,13 @@ class Menu:
 
         elif self.value_chose == '2':
             self.__turingInstance.subtracao()
-        
+
         elif self.value_chose == '3':
             self.__turingInstance.multiplicacao()
-        
+
+        elif self.value_chose == '4':
+            self.__turingInstance.igualar()
+
         elif self.value_chose == '0':
             self.finish()
 
@@ -40,5 +57,3 @@ class Menu:
 
     def finish(self):
         exit()
-        
-
