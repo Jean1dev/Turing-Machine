@@ -30,10 +30,10 @@ class Menu:
         print("|      2 - Subtração          |")
         print("|      3 - Multiplicação      |")
         print("|      4 - Divisão            |")
+        print("|      5 - Igualar            |")
         print("|      0 - Sair               |")
         print("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|")
 
-        self.clear()
         self.value_chose = self.input()
         self.switch()
 
@@ -48,6 +48,9 @@ class Menu:
             self.__turingInstance.multiplicacao()
 
         elif self.value_chose == '4':
+            self.__turingInstance.divisao()
+
+        elif self.value_chose == '5':
             self.__turingInstance.igualar()
 
         elif self.value_chose == '0':

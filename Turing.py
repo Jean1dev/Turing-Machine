@@ -11,27 +11,338 @@ class TuringMachine:
         return input("\n\t\t\t\t\t    Digite o Numero :   ")
 
     # ***********************************************************************
+    def divisao(self):
+    # *********************************************************************** 
+        numero1 = int(self.getInputData())   
+        numero2 = int(self.getInputData())
+
+        ret = ['>']
+        for item in range(numero1):
+            ret.append('*')
+
+        ret.append('_')
+        
+        for item in range(numero2):
+                ret.append('*')
+        ret.append('_')
+        for item in range(int(numero1 / numero2)):
+                ret.append('_')
+        ret.append('_')
+        for item in range(numero1 % numero2):
+            ret.append('_')
+
+        estado = -1
+        pos = 0
+        while (estado != 21):
+            marc = []
+            for i in range(pos):
+                marc.append(' ')
+            marc.append('|')
+            auxmarc = ''.join(marc)
+            print('{0}'.format(auxmarc))
+            aux = ''.join(ret)
+            print('{0} \n'.format(aux))
+            if (estado == -1):
+                pos += 1
+                estado += 1
+            elif (estado == 0):
+                if ret[pos] == '*':
+                    estado = 1
+                    ret[pos] = '$'
+                    pos += 1
+            elif (estado == 1):
+                if (ret[pos] == '*'):
+                    pos += 1
+                else:
+                    estado = 2
+                    pos += 1
+            elif (estado == 2):
+                if (ret[pos] == '*'):
+                    pos += 1
+                else:
+                    estado = 3
+                    pos -= 1
+            elif (estado == 3):
+                if (ret[pos] == '*'):
+                    estado = 4
+                    ret[pos] = '$'
+                    pos -= 1
+            elif (estado == 4):
+                if (ret[pos] == '*'):
+                    estado = 5
+                    pos -= 1
+                else:
+                    estado = 10
+                    pos += 1
+            elif (estado == 5):
+                if (ret[pos] == '*'):
+                    pos -= 1
+                elif (ret[pos] == '$'):
+                    estado = 6
+                    pos += 1
+                else:
+                    pos -= 1
+            elif (estado == 6):
+                if (ret[pos] == '*'):
+                    estado = 7
+                    ret[pos] = '$'
+                    pos += 1
+                else:
+                    estado = 12
+                    pos += 1
+            elif (estado == 7):
+                if (ret[pos] == '*'):
+                    pos += 1
+                elif (ret[pos] == '$'):
+                    estado = 3
+                    pos -= 1
+                else:
+                    estado = 8
+                    pos += 1
+            elif (estado == 8):
+                if (ret[pos] == '*'):
+                    pos += 1
+                elif (ret[pos] == '$'):
+                    estado = 3
+                    pos -= 1
+                else:
+                    estado = 3
+                    pos -= 1
+            elif (estado == 9):
+                if (ret[pos] == '_'):
+                    estado = 10
+                    pos += 1
+            elif (estado == 10):
+                if (ret[pos] == '$'):
+                    estado = 10
+                    ret[pos] = '*'
+                    pos += 1
+                else:
+                    estado = 11
+                    pos += 1
+            elif (estado == 11):
+                if (ret[pos] == '*'):
+                    pos += 1
+                else:
+                    estado = 5
+                    ret[pos] = '*'
+                    pos -= 1
+            elif (estado == 12):
+                if (ret[pos] == '*'):
+                    pos += 1
+                elif (ret[pos] == '$'):
+                    estado = 13
+                    pos += 1
+                else:
+                    estado = 20
+                    ret[pos] = '>'
+                    pos -= 1
+            elif (estado == 13):
+                if (ret[pos] == '$'):
+                    pos += 1
+                else:
+                    estado = 14
+                    pos += 1
+            elif (estado == 14):
+                if (ret[pos] == '*'):
+                    pos += 1
+                else:
+                    estado = 15
+                    pos += 1
+            elif (estado == 15):
+                if (ret[pos] == '*'):
+                    pos += 1
+                else:
+                    estado = 16
+                    ret[pos] = '*'
+                    pos -= 1
+            elif (estado == 16):
+                if (ret[pos] == '>'):
+                    estado = 18
+                    pos -= 1
+                elif (ret[pos] == '$'):
+                    estado = 17
+                    pos -= 1
+                else:
+                    pos -= 1
+            elif (estado == 17):
+                if (ret[pos] == '*'):
+                    estado = 18
+                    pos += 1
+                else:
+                    pos -= 1
+            elif (estado == 18):
+                if (ret[pos] == '$'):
+                    estado = 19
+                    ret[pos] = '*'
+                    pos += 1
+            elif (estado == 19):
+                if (ret[pos] == '$'):
+                    estado = 13
+                    pos += 1
+                else:
+                    estado = 20
+                    ret[pos] = '>'
+                    pos -= 1
+            elif (estado == 20):
+                if (ret[pos] == '>'):
+                    estado = 21
+                    ret[pos] = '_'
+                    pos += 1
+                else:
+                    ret[pos] = '_'
+                    pos -= 1
+        marc = []
+        for i in range(pos):
+            marc.append(' ')
+        marc.append('|')
+        auxmarc = ''.join(marc)
+        print('{0} \n'.format(auxmarc))
+        aux = ''.join(ret)
+        print('{0} \n'.format(aux))
+        p = 0
+        for item in range(len(ret)):
+            if (ret[item] == '>'):
+                break
+            p += 1
+        for item in range(p):
+                ret.remove('_')
+        print('Fim do procedimento ')
+        print(''.join(ret))
+
+    # ***********************************************************************
     def igualar(self):
     # ***********************************************************************
         numero1 = self.getInputData()
         numero2 = self.getInputData()
 
-        operador1 = ""
-        operador2 = ""
+        numero1 = int(numero1)
+        numero2 = int(numero2)
 
-        i = 0
-        for i in range(int(numero1)):
-            operador1 += operador1 + "*"
+        ret = ['>']
+        for item in range(numero1):
+            ret.append('*')
 
-        i = 0
-        for i in range(int(numero2)):
-            operador2 += operador2 + "*"
+        ret.append('_')
 
-        res = operador1 + " " + operador2 + ""
-        print("Valores: " + res)
+        for item in range(numero2):
+            ret.append('*')
+        if (numero2 != 0):
+            for item in range(numero1 - numero2 + 1):
+                ret.append('_')
+        else:
+            for item in range(numero1):
+                ret.append('_')
+        ret.append('_')
 
-        res = operador1 + " " + operador1 + ""
-        print("Valores igualados: " + res)
+        estado = -1
+        pos = 0
+        while (estado != 9):
+            marc = []
+            for i in range(pos):
+                marc.append(' ')
+            marc.append('|')
+            auxmarc = ''.join(marc)
+            print('{0}'.format(auxmarc))
+            aux = ''.join(ret)
+            print('{0} \n'.format(aux))
+            
+            if (estado == -1):
+                pos += 1
+                estado += 1
+            elif (estado == 0):
+                if ret[pos] == '*':
+                    estado = 1
+                    ret[pos] = '$'
+                    pos += 1
+                else:
+                    estado = 7
+                    pos +=1
+
+
+            elif (estado == 1):
+                if (ret[pos] == '*'):
+                    pos += 1
+                    estado = 2;
+                else:
+                    estado = 6
+                    pos += 1
+
+
+            elif (estado == 2):
+                if (ret[pos] == '*'):
+                    pos += 1
+                else:
+                    estado = 3
+                    pos += 1
+
+
+            elif (estado == 3):
+                if (ret[pos] == '*'):
+                    estado = 4
+                    ret[pos] = '$'
+                    pos -= 1
+                elif(ret[pos] == '$'):
+                    pos += 1
+                else:
+                    estado = 4
+                    ret[pos] = '$'
+                    pos -= 1
+
+
+            elif (estado == 4):
+                if (ret[pos] == '*'):
+                    estado = 5
+                    pos -= 1
+                else:
+                    pos -= 1
+
+
+            elif (estado == 5):
+                if (ret[pos] == '$'):
+                    estado = 0
+                    pos += 1
+                else:
+                    pos -= 1
+
+
+
+            elif (estado == 6):
+                if (ret[pos] == '$'):
+                    pos += 1
+                else:
+                    estado = 7
+                    ret[pos] = '$'
+                    pos += 1
+
+
+            elif (estado == 7):
+                if (ret[pos] == '*'):
+                    pos += 1
+                else:
+                    estado = 8
+                    pos -= 1
+
+            elif (estado == 8):
+                if (ret[pos] == '>'):
+                    estado = 9
+                    pos += 1
+                elif (ret[pos] == '$'):
+                    ret[pos] = '*'
+                    pos -= 1
+                else:
+                    ret[pos] = '_'
+                    pos -= 1
+
+        marc = []
+        for i in range(pos):
+            marc.append(' ')
+        marc.append('|')
+        auxmarc = ''.join(marc)
+        print('{0} \n'.format(auxmarc))
+        aux = ''.join(ret)
+        print('{0} \n'.format(aux))
+        print(''.join(ret))
 		
 
 
