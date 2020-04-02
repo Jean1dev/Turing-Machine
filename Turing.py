@@ -357,11 +357,11 @@ class TuringMachine:
 
         i = 0
         for i in range(int(numero1)):
-            operador1 += operador1 + "*"
+            operador1 +=  "*"
 
         i = 0
         for i in range(int(numero2)):
-            operador2 += operador2 + "*"
+            operador2 +=  "*"
 
         res = operador1 + " " + operador2 + ""
 		# os.system("cls")
